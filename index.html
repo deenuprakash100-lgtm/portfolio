@@ -1,1 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Deenu Prakash | Portfolio Admin</title>
+
+  <meta name="robots" content="noindex,nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+  <!-- ================= LOGIN ================= -->
+
+  <section class="login-page" id="loginPage">
+
+    <div class="login-card">
+
+      <div class="brand">
+        <div class="brand-mark">DP</div>
+
+        <div>
+          <h1>Portfolio Admin</h1>
+          <p>Deenu Prakash</p>
+        </div>
+      </div>
+
+      <div id="loginMessage" class="message hidden"></div>
+
+      <form id="loginForm">
+
+        <div class="field">
+          <label for="loginEmail">
+            Email
+          </label>
+
+          <input
+            type="email"
+            id="loginEmail"
+            placeholder="Enter admin email"
+            autocomplete="username"
+            required
+          >
+        </div>
+
+        <div class="field">
+          <label for="loginPassword">
+            Password
+          </label>
+
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="Enter password"
+            autocomplete="current-password"
+            required
+          >
+        </div>
+
+        <button
+          type="submit"
+          class="button button-primary full-width"
+          id="loginButton"
+        >
+          Sign In
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= ADMIN ================= -->
+
+  <section class="admin-page hidden" id="adminPage">
+
+    <!-- TOP BAR -->
+
+    <header class="topbar">
+
+      <div class="brand">
+
+        <div class="brand-mark">
+          DP
+        </div>
+
+        <div>
+          <h1>Portfolio Admin</h1>
+          <p>Manage your portfolio</p>
+        </div>
+
+      </div>
+
+
+      <div class="topbar-actions">
+
+        <span
+          class="admin-email"
+          id="adminEmail"
+        ></span>
+
+        <a
+          href="./"
+          target="_blank"
+          class="button"
+        >
+          View Portfolio
+        </a>
+
+        <button
+          type="button"
+          class="button"
+          id="reloadButton"
+        >
+          Reload
+        </button>
+
+        <button
+          type="button"
+          class="button button-danger"
+          id="logoutButton"
+        >
+          Sign Out
+        </button>
+
+      </div>
+
+    </header>
+
+
+    <div
+      id="adminMessage"
+      class="message hidden"
+    ></div>
+
+
+    <!-- MAIN LAYOUT -->
+
+    <div class="admin-layout">
+
+
+      <!-- SIDEBAR -->
+
+      <aside class="sidebar">
+
+        <button
+          class="sidebar-button active"
+          data-section="profile"
+        >
+          Profile
+        </button>
+
+        <button
+          class="sidebar-button"
+          data-section="about"
+        >
+          About
+        </button>
+
+        <button
+          class="sidebar-button"
+          data-section="stats"
+        >
+          Stats
+        </button>
+
+        <button
+          class="sidebar-button"
+          data-section="skills"
+        >
+          Skills
+        </button>
+
+        <button
+          class="sidebar-button"
+          data-section="experience"
+        >
+          Experience
+        </button>
+
+        <button
+          class="sidebar-button"
+          data-section="contact"
+        >
+          Contact
+        </button>
+
+        <button
+          class="sidebar-button"
+          data-section="projects"
+        >
+          Projects
+        </button>
+
+      </aside>
+
+
+      <!-- CONTENT -->
+
+      <main class="admin-content">
+
+
+        <!-- PROFILE -->
+
+        <section
+          class="admin-section active"
+          id="section-profile"
+        >
+
+          <div class="section-header">
+
+            <div>
+              <h2>Profile</h2>
+
+              <p>
+                Edit the main information shown on your homepage.
+              </p>
+            </div>
+
+          </div>
+
+
+          <form id="profileForm">
+
+            <div class="grid-2">
+
+              <div class="field">
+                <label>Name</label>
+
+                <input
+                  id="profileName"
+                  type="text"
+                >
+              </div>
+
+
+              <div class="field">
+                <label>Role</label>
+
+                <input
+                  id="profileRole"
+                  type="text"
+                >
+              </div>
+
+
+              <div class="field">
+                <label>Eyebrow</label>
+
+                <input
+                  id="profileEyebrow"
+                  type="text"
+                >
+              </div>
+
+
+              <div class="field">
+                <label>Main Title</label>
+
+                <input
+                  id="profileTitle1"
+                  type="text"
+                >
+              </div>
+
+
+              <div class="field">
+                <label>Second Title</label>
+
+                <input
+                  id="profileTitle2"
+                  type="text"
+                >
+              </div>
+
+
+              <div class="field">
+                <label>Subtitle</label>
+
+                <input
+                  id="profileSubtitle"
+                  type="text"
+                >
+              </div>
+
+            </div>
+
+
+            <div class="field">
+
+              <label>
+                Hero Description
+              </label>
+
+              <textarea
+                id="profileDescription"
+              ></textarea>
+
+            </div>
+
+
+            <div class="grid-2">
+
+              <div class="field">
+
+                <label>
+                  Profile Image URL
+                </label>
+
+                <input
+                  id="profileImageUrl"
+                  type="text"
+                  placeholder="assets/profile.jpg"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Resume URL
+                </label>
+
+                <input
+                  id="resumeUrl"
+                  type="text"
+                  placeholder="assets/resume.pdf"
+                >
+
+              </div>
+
+            </div>
+
+
+            <button
+              type="submit"
+              class="button button-primary"
+            >
+              Save Profile
+            </button>
+
+          </form>
+
+        </section>
+
+
+        <!-- ABOUT -->
+
+        <section
+          class="admin-section"
+          id="section-about"
+        >
+
+          <div class="section-header">
+
+            <div>
+              <h2>About</h2>
+
+              <p>
+                Update your About section.
+              </p>
+            </div>
+
+          </div>
+
+
+          <form id="aboutForm">
+
+            <div class="field">
+
+              <label>
+                About Paragraphs
+              </label>
+
+              <textarea
+                id="aboutParagraphs"
+                placeholder="Separate paragraphs with a blank line."
+              ></textarea>
+
+            </div>
+
+
+            <div class="field">
+
+              <label>
+                About Bullet Points
+              </label>
+
+              <textarea
+                id="aboutBullets"
+                placeholder="One bullet per line."
+              ></textarea>
+
+            </div>
+
+
+            <div class="field">
+
+              <label>
+                Education
+              </label>
+
+              <textarea
+                id="educationJson"
+                placeholder='[{"degree":"MCA","meta":"Postgraduate"}]'
+              ></textarea>
+
+            </div>
+
+
+            <div class="field">
+
+              <label>
+                Current Focus Tags
+              </label>
+
+              <input
+                id="focusTags"
+                type="text"
+                placeholder="Sales Analytics, CRM Data, Dashboards"
+              >
+
+            </div>
+
+
+            <button
+              type="submit"
+              class="button button-primary"
+            >
+              Save About
+            </button>
+
+          </form>
+
+        </section>
+
+
+        <!-- STATS -->
+
+        <section
+          class="admin-section"
+          id="section-stats"
+        >
+
+          <div class="section-header">
+
+            <div>
+              <h2>Stats</h2>
+
+              <p>
+                Edit your portfolio statistics.
+              </p>
+            </div>
+
+          </div>
+
+
+          <form id="statsForm">
+
+            <div class="grid-2">
+
+
+              <div class="card">
+
+                <h3>Stat 1</h3>
+
+                <div class="field">
+                  <label>Value</label>
+
+                  <input
+                    id="statValue0"
+                    type="text"
+                  >
+                </div>
+
+                <div class="field">
+                  <label>Label</label>
+
+                  <input
+                    id="statLabel0"
+                    type="text"
+                  >
+                </div>
+
+              </div>
+
+
+              <div class="card">
+
+                <h3>Stat 2</h3>
+
+                <div class="field">
+                  <label>Value</label>
+
+                  <input
+                    id="statValue1"
+                    type="text"
+                  >
+                </div>
+
+                <div class="field">
+                  <label>Label</label>
+
+                  <input
+                    id="statLabel1"
+                    type="text"
+                  >
+                </div>
+
+              </div>
+
+
+              <div class="card">
+
+                <h3>Stat 3</h3>
+
+                <div class="field">
+                  <label>Value</label>
+
+                  <input
+                    id="statValue2"
+                    type="text"
+                  >
+                </div>
+
+                <div class="field">
+                  <label>Label</label>
+
+                  <input
+                    id="statLabel2"
+                    type="text"
+                  >
+                </div>
+
+              </div>
+
+
+              <div class="card">
+
+                <h3>Stat 4</h3>
+
+                <div class="field">
+                  <label>Value</label>
+
+                  <input
+                    id="statValue3"
+                    type="text"
+                  >
+                </div>
+
+                <div class="field">
+                  <label>Label</label>
+
+                  <input
+                    id="statLabel3"
+                    type="text"
+                  >
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <button
+              type="submit"
+              class="button button-primary"
+            >
+              Save Stats
+            </button>
+
+          </form>
+
+        </section>
+
+
+        <!-- SKILLS -->
+
+        <section
+          class="admin-section"
+          id="section-skills"
+        >
+
+          <div class="section-header">
+
+            <div>
+              <h2>Skills</h2>
+
+              <p>
+                Manage your skill categories.
+              </p>
+            </div>
+
+          </div>
+
+
+          <form id="skillsForm">
+
+            <div class="field">
+
+              <label>
+                Skills JSON
+              </label>
+
+              <textarea
+                id="skillsJson"
+                class="large-textarea"
+              ></textarea>
+
+            </div>
+
+
+            <button
+              type="submit"
+              class="button button-primary"
+            >
+              Save Skills
+            </button>
+
+          </form>
+
+        </section>
+
+
+        <!-- EXPERIENCE -->
+
+        <section
+          class="admin-section"
+          id="section-experience"
+        >
+
+          <div class="section-header">
+
+            <div>
+              <h2>Experience</h2>
+
+              <p>
+                Update your work experience.
+              </p>
+            </div>
+
+          </div>
+
+
+          <form id="experienceForm">
+
+            <div class="field">
+
+              <label>
+                Experience JSON
+              </label>
+
+              <textarea
+                id="experienceJson"
+                class="large-textarea"
+              ></textarea>
+
+            </div>
+
+
+            <button
+              type="submit"
+              class="button button-primary"
+            >
+              Save Experience
+            </button>
+
+          </form>
+
+        </section>
+
+
+        <!-- CONTACT -->
+
+        <section
+          class="admin-section"
+          id="section-contact"
+        >
+
+          <div class="section-header">
+
+            <div>
+              <h2>Contact</h2>
+
+              <p>
+                Change your phone, WhatsApp and social links.
+              </p>
+            </div>
+
+          </div>
+
+
+          <form id="contactForm">
+
+            <div class="grid-2">
+
+
+              <div class="field">
+
+                <label>
+                  Phone
+                </label>
+
+                <input
+                  id="phone"
+                  type="text"
+                  value="8367418575"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  WhatsApp
+                </label>
+
+                <input
+                  id="whatsapp"
+                  type="text"
+                  value="8074167158"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Email
+                </label>
+
+                <input
+                  id="email"
+                  type="email"
+                  value="deenuprakash100@gmail.com"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  LinkedIn
+                </label>
+
+                <input
+                  id="linkedin"
+                  type="url"
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  GitHub
+                </label>
+
+                <input
+                  id="github"
+                  type="url"
+                >
+
+              </div>
+
+            </div>
+
+
+            <button
+              type="submit"
+              class="button button-primary"
+            >
+              Save Contact
+            </button>
+
+          </form>
+
+        </section>
+
+
+        <!-- PROJECTS -->
+
+        <section
+          class="admin-section"
+          id="section-projects"
+        >
+
+          <div class="section-header">
+
+            <div>
+              <h2>Projects</h2>
+
+              <p>
+                Add and edit your portfolio projects.
+              </p>
+            </div>
+
+          </div>
+
+
+          <form id="projectForm">
+
+            <input
+              type="hidden"
+              id="projectId"
+            >
+
+
+            <div class="grid-2">
+
+
+              <div class="field">
+
+                <label>
+                  Project Title
+                </label>
+
+                <input
+                  id="projectTitle"
+                  type="text"
+                  required
+                >
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Sort Order
+                </label>
+
+                <input
+                  id="projectSortOrder"
+                  type="number"
+                  value="0"
+                >
+
+              </div>
+
+            </div>
+
+
+            <div class="field">
+
+              <label>
+                Description
+              </label>
+
+              <textarea
+                id="projectDescription"
+              ></textarea>
+
+            </div>
+
+
+            <div class="field">
+
+              <label>
+                Tools
+              </label>
+
+              <input
+                id="projectTools"
+                placeholder="Excel, SQL, Power BI"
+              >
+
+            </div>
+
+
+            <div class="grid-2">
+
+
+              <div class="field">
+
+                <label>
+                  Business Problem
+                </label>
+
+                <textarea
+                  id="projectProblem"
+                ></textarea>
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Solution
+                </label>
+
+                <textarea
+                  id="projectSolution"
+                ></textarea>
+
+              </div>
+
+            </div>
+
+
+            <div class="field">
+
+              <label>
+                Features
+              </label>
+
+              <textarea
+                id="projectFeatures"
+                placeholder="One feature per line."
+              ></textarea>
+
+            </div>
+
+
+            <div class="field">
+
+              <label>
+                Results
+              </label>
+
+              <textarea
+                id="projectResults"
+              ></textarea>
+
+            </div>
+
+
+            <div class="field">
+
+              <label>
+                Project Image URL
+              </label>
+
+              <input
+                id="projectImageUrl"
+                placeholder="assets/screenshots/project.jpg"
+              >
+
+            </div>
+
+
+            <div class="field">
+
+              <label>
+                Demo Note
+              </label>
+
+              <input
+                id="projectDemoNote"
+              >
+
+            </div>
+
+
+            <div class="checkbox-row">
+
+              <label>
+                <input
+                  type="checkbox"
+                  id="projectDemo"
+                  checked
+                >
+                Demo data
+              </label>
+
+
+              <label>
+                <input
+                  type="checkbox"
+                  id="projectPublished"
+                  checked
+                >
+                Published
+              </label>
+
+            </div>
+
+
+            <div class="actions">
+
+              <button
+                type="submit"
+                class="button button-primary"
+              >
+                Save Project
+              </button>
+
+              <button
+                type="button"
+                class="button hidden"
+                id="cancelProject"
+              >
+                Cancel Edit
+              </button>
+
+            </div>
+
+          </form>
+
+
+          <div
+            class="project-list"
+            id="projectList"
+          ></div>
+
+        </section>
+
+      </main>
+
+    </div>
+
+  </section>
+
+
+  <!-- SUPABASE -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <script src="supabase-config.js"></script>
+
+  <script src="admin.js"></script>
+
+</body>
+</html>
