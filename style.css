@@ -775,3 +775,28 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; letter-spac
   .timeline__marker { left: -24px; }
   .modal__panel { padding: 26px; }
 }
+/* ==========================================================================
+   SCROLL REVEAL
+   ========================================================================== */
+
+.reveal {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity .7s var(--ease),
+    transform .7s var(--ease);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+/* JavaScript adds .reveal-ready when the animation system is available.
+   Without JavaScript, portfolio content remains visible instead of becoming blank. */
+
+.reveal.reveal-ready {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+.reveal.reveal-ready.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
